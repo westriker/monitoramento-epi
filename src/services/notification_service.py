@@ -5,7 +5,7 @@ from src.config.settings import settings
 def notificar_infracao_whatsapp(nome_operador, detalhe_infracao=""):
     """
     Envia notificação formatada para o Telegram.
-    Exemplo de saída: "TI Weslley sem EPI" ou "PINTORES João sem EPI"
+    Exemplo de saída: "fulano x sem capacete " ou "PINTORES x sem EPI"
     """
     bot_token = settings.TELEGRAM_BOT_TOKEN
     chat_id = settings.TELEGRAM_CHAT_ID
@@ -15,7 +15,7 @@ def notificar_infracao_whatsapp(nome_operador, detalhe_infracao=""):
         return
 
     # Formatação limpa do texto para a notificação
-    # Transforma "Weslley Santos (TI)" -> "TI Weslley Santos sem EPI"
+    # Transforma "x  (cargo)" -> " x  sem EPI"
     if "(" in nome_operador and ")" in nome_operador:
         partes = nome_operador.split("(")
         nome = partes[0].strip()

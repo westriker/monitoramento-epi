@@ -9,7 +9,7 @@ from src.config.settings import settings
 from src.database.client import registrar_ocorrencia
 from src.services.notification_service import notificar_infracao_whatsapp
 
-# Compatibilidade para PyTorch 2.6+
+# compatibilidade para PyTorch 2.6+
 _original_torch_load = torch.load
 
 def _custom_torch_load(*args, **kwargs):
